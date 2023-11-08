@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
-import javax.persistence.OneToOne;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "cars")
@@ -22,10 +19,6 @@ public class Car {
 
     @Column(name = "series")
     private int series;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private User user;
 
     public Car() {}
 
@@ -57,10 +50,6 @@ public class Car {
     public void setSeries(int series) {
         this.series = series;
     }
-
-    public User getUser() { return user; }
-
-    public void setUser(User user) { this.user = user; }
 
     @Override
     public String toString() {
